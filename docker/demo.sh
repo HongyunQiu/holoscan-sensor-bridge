@@ -75,6 +75,8 @@ docker run \
     -e NVIDIA_DRIVER_CAPABILITIES=graphics,video,compute,utility,display \
     -e NVIDIA_VISIBLE_DEVICES=all \
     -e DISPLAY=$DISPLAY \
+    -e HOLOSCAN_HEADLESS=${HOLOSCAN_HEADLESS:-0} \
+    -e XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp} \
     -e enableRawReprocess=2 \
     hololink-demo:$VERSION \
     $*
